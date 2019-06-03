@@ -1,0 +1,13 @@
+.coluna{
+    width: 40px;
+    background-color: gray; 
+    border: 1px solid black;
+}
+
+.executado{
+    background-color: red;
+}
+
+.es{
+    background-color: green;
+}
