@@ -177,7 +177,7 @@ function voltaPrimeiro(listaProcessos, tempo, n){
         if (listaProcessos[i].getComeco() != undefined){    //se o processo já iniciou
             resto = (listaProcessos[i].getDuracaoEs() - (tempo - listaProcessos[i].getTermino()));  //resto é o tempo que falta para terminar E/S
         }else{  //se o processo ainda não iniciou
-            resto = listaProcessos[i].getTempoChegada - tempo;  //reto é o tempo que falta para a chegada do processo
+            resto = listaProcessos[i].getTempoChegada() - tempo;  //resto é o tempo que falta para a chegada do processo
         }
         if (min > resto){
             min = resto;
@@ -224,6 +224,13 @@ function desenhaFluxograma(processo, tempo, cont, status){
     
 }
 
+function executaInicio(listaProcessos, tempo, i, n){
+    cont = listaProcessos[i].getTempoChegada() - tempo;
+    listaProcessos[i].setPronto(true);
+    desenhaFluxograma(listaProcessos[i], tempo, cont, "es");
+    executaLista(listaProcessos, tempo + cont, 0, n);
+}
+
 function executaLista(listaProcessos, tempo, i, n){
 
     verificaPronto(listaProcessos[i], tempo);
@@ -261,13 +268,15 @@ function executaLista(listaProcessos, tempo, i, n){
             if(listaProcessos[i].getComeco() != undefined){ //se o processo já foi iniciado
                 executaEs(listaProcessos, tempo, i, n);
             }else{  //se o processo ainda não foi iniciado
-                cont = listaProcessos[i].getTempoChegada() - tempo;
-                listaProcessos[i].setPronto(true);
-                executaLista(listaProcessos, tempo + cont, 0, n);
+                executaInicio(listaProcessos, tempo, i, n);
             }
         }else if((i+1) == n && n != 1){ //se nenhum processo está pronto
             i = voltaPrimeiro(listaProcessos, tempo, n);
-            executaEs(listaProcessos, tempo, i, n);
+            if (listaProcessos[i].getComeco() != undefined){
+                executaEs(listaProcessos, tempo, i, n);
+            }else{
+                executaInicio(listaProcessos, tempo, i, n);
+            }
         }
     }
 }
