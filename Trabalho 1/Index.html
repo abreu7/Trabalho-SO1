@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Escalonamento de Processos(SPN)</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css"> 
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
@@ -12,7 +13,36 @@
                 <h1>Shortest Process Next(SPN)</h1>
             </div>
         </header>
-        <main>
+        
+        <div class="container borda">
+                <h2 id="titulo-form">Adicionar processos</h2>
+                <form>
+                    <div class="form-group row">
+                        <label class="col-sm-2" for="nome">Nome:</label>
+                        <input id="nome" name="nome" type="text" placeholder="digite o nome do processo" class="form-control form-control-sm col-sm-3">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" for="chegada">Tempo de chegada:</label>
+                        <input id="chegada" name="chegada" type="number" min="0" step="1" placeholder="0" class="form-control form-contro-sm col-sm-3">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" for="execucao">Tempo de execução:</label>
+                        <input id="execucao" name="execucao" type="number" min="1" step="1" placeholder="0" class="campo">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" for="intervalo-entrada-saida">Período em que ocorre entrada/saída:</label>
+                        <input id="intervalo-entrada-saida" name="intervalo-entrada-saida" type="number" min="0" step="1" placeholder="0" class="campo">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" for="duracao-entrada-saida">Duração de entrada/saída:</label>
+                        <input id="duracao-entrada-saida" name="duracao-entrada-saida" type="number" min="0" step="1" placeholder="0" class="campo">
+                    </div>
+                    <button id="adicionar-processo" class="botao bto-adicionar">Adicionar</button>
+                    <button id="executar" class="botao bto-executar">executar</button>
+                </form>
+          </div>
+		
+		<main>
             <section class = "container">
                 <h2>Demonstração:</h2>
                 <div id = "demonstracao">
@@ -22,32 +52,6 @@
                 </div>
             </section>            
         </main>
-        <section class="container">
-                <h2 id="titulo-form">Adicionar processos</h2>
-                <form>
-                    <div class="grupo">
-                        <label for="nome">Nome:</label>
-                        <input id="nome" name="nome" type="text" placeholder="digite o nome do processo" class="campo">
-                    </div>
-                    <div class="grupo">
-                        <label for="chegada">Tempo de chegada:</label>
-                        <input id="chegada" name="chegada" type="number" min="0" step="1" placeholder="0" class="campo">
-                    </div>
-                    <div class="grupo">
-                        <label for="execucao">Tempo de execução:</label>
-                        <input id="execucao" name="execucao" type="number" min="1" step="1" placeholder="0" class="campo">
-                    </div>
-                    <div class="grupo">
-                        <label for="intervalo-entrada-saida">Período em que ocorre entrada/saída:</label>
-                        <input id="intervalo-entrada-saida" name="intervalo-entrada-saida" type="number" min="0" step="1" placeholder="0" class="campo">
-                    </div>
-                    <div class="grupo">
-                        <label for="duracao-entrada-saida">Duração de entrada/saída:</label>
-                        <input id="duracao-entrada-saida" name="duracao-entrada-saida" type="number" min="0" step="1" placeholder="0" class="campo">
-                    </div>
-                    <button id="adicionar-processo" class="botao bto-adicionar">Adicionar</button>
-                    <button id="executar" class="botao bto-executar">executar</button>
-                </form>
-            </section>
+		
             <script src="js/Escalonamento.js"></script>
     </body>
