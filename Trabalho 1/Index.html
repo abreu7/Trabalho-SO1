@@ -10,12 +10,14 @@
 	<body>
         <header>
             <div class = "container">
-                <h1>Shortest Process Next(SPN)</h1>
+                <h1 class="display-4">Shortest Process Next(SPN)</h1>
             </div>
         </header>
         
-        <div class="container borda">
-                <h2 id="titulo-form">Adicionar processos</h2>
+		<div class="container">
+        	<div class="jumbotron">
+                <p  class="lead" id="titulo-form">Preencha os campos com as informações do processo.</p>
+				<hr class="my-4">
                 <form>
                     <div class="form-group row">
                         <label class="col-sm-2" for="nome">Nome:</label>
@@ -37,11 +39,12 @@
                         <label class="col-sm-2" for="duracao-entrada-saida">Duração de entrada/saída:</label>
                         <input id="duracao-entrada-saida" name="duracao-entrada-saida" type="number" min="0" step="1" placeholder="0" class="campo">
                     </div>
-                    <button id="adicionar-processo" class="botao bto-adicionar">Adicionar</button>
-                    <button id="executar" class="botao bto-executar">executar</button>
+                    <button id="adicionar-processo" class="btn btn-primary">Adicionar</button>
+                    <button id="executar" class="btn btn-primary">executar</button>
                 </form>
+				<button id="teste" class="btn btn-primary">Teste</button>
           </div>
-		
+		</div>
 		<main>
             <section class = "container">
                 <h2>Demonstração:</h2>
