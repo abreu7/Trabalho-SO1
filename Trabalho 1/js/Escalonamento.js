@@ -86,7 +86,7 @@ adicionaProcesso(listaProcessos); */
 var listaProcessos = [];
 
 var botaoAdicionar = document.querySelector("#adicionar-processo")
-botaoAdicionar.addEventListener("click", function(event){
+	botaoAdicionar.addEventListener("click", function(event){
     var nome = document.querySelector("#nome");
     var chegada = document.querySelector("#chegada");
     var execucao = document.querySelector("#execucao");
@@ -113,7 +113,23 @@ botaoAdicionar.addEventListener("click", function(event){
         event.preventDefault();
         event.stopPropagation();
     }
-})
+});
+
+//TESTE URIAS
+document.getElementById("teste").onclick = function() {adicionaProcessoUrias()};
+
+function adicionaProcessoUrias(){
+	var p1 = new Processo("Teste",0,10,3,4);
+	console.log(p1);
+	//var nome = document.querySelector("#nome");
+    //var chegada = document.querySelector("#chegada");
+    //var execucao = document.querySelector("#execucao");
+    //var intervaloEs = document.querySelector("#intervalo-entrada-saida");
+    //var duracaoEs = document.querySelector("#duracao-entrada-saida");
+	return p1;
+}
+
+//FIM TESTE URIAS
 
 var botaoExecutar = document.querySelector("#executar");
 botaoExecutar.addEventListener("click", function(event){
