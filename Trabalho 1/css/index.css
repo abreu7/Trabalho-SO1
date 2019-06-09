@@ -11,3 +11,22 @@
 .es{
     background-color: green;
 }
+.borda{
+	border: 1px solid black;
+}
+.sombra{
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+.proc_estilo{
+	font-size: 14px;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+	/*border-bottom: 5px solid #4286f4;*/
+	border-left: 3px solid #4286f4;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.mg_bottom30{
+	margin-bottom: 30px;
+}
