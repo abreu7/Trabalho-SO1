@@ -112,21 +112,31 @@ var botaoAdicionar = document.querySelector("#adicionar-processo")
         linha.appendChild(coluna);
         event.preventDefault();
         event.stopPropagation();
+		
+		//Urias 
+		//listaProcessos.forEach(exibenaTela)
+		exibenaTela(nome, chegada, execucao, intervaloEs, duracaoEs);
     }
 });
 
 //TESTE URIAS
-document.getElementById("teste").onclick = function() {adicionaProcessoUrias()};
+//document.getElementById("teste").onclick = function() {adicionaProcessoUrias()};
 
-function adicionaProcessoUrias(){
-	var p1 = new Processo("Teste",0,10,3,4);
-	console.log(p1);
-	//var nome = document.querySelector("#nome");
-    //var chegada = document.querySelector("#chegada");
-    //var execucao = document.querySelector("#execucao");
-    //var intervaloEs = document.querySelector("#intervalo-entrada-saida");
-    //var duracaoEs = document.querySelector("#duracao-entrada-saida");
-	return p1;
+function exibenaTela(nome, chegada, execucao,intervaloEs, duracaoEs){
+	var div_pricipal = document.getElementById("row");
+	var div = document.createElement("div"); //Cria a Div
+	var span = document.createElement("span"); //Cria o Span
+	div_pricipal.appendChild(div); // Adiciona a div criada a Div Principal
+	div.classList.add("proc_estilo","col-md-2"); // Adicona a classe a Div
+	div.appendChild(span);
+	span.innerHTML = "Nome: "      + nome.value + "<br/>" +
+					 "Chegada: "   + chegada.value + "<br/>" +
+		             "Exec: "      + execucao.value + "<br/>" +
+		 			 "Inico E/S: " + intervaloEs.value + "<br/>" +
+		             "E/S: "       + duracaoEs.value + "<br/>";
+	
+	
+	//console.log(Processo);
 }
 
 //FIM TESTE URIAS
